@@ -12,7 +12,7 @@ const Map = () => {
    useEffect(() => {
       const map = new mapboxgl.Map({
          container: mapContainer.current,
-         style: "mapbox://styles/mapbox/streets-v11",
+         style: "mapbox://styles/mapbox/navigation-preview-night-v4",
          center: [-87.903982, 43.020403],
          zoom: 12,
       })
@@ -27,10 +27,17 @@ const Map = () => {
          })
       );
 
+      map.addControl(
+         new MapboxGeocoder({
+         accessToken: mapboxgl.accessToken,
+         mapboxgl: mapboxgl
+         })
+         );
+
       return () => map.remove()
    }, [])
 
-   return <div ref={mapContainer} style={{ height: 1000 }} />
+   return <div ref={mapContainer} style={{ width: "100%", height: "100vh" }}  />
 }
 
 export default Map
