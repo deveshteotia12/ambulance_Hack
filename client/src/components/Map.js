@@ -15,6 +15,8 @@ const layerStyle = {
    paint: {
       'circle-radius': 10,
       'circle-color': '#f0663c',
+      "circle-stroke-width": 2,
+      "circle-stroke-color": '#000'
    }
 };
 
