@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Map from './Map';
-import Login from './Login';
+import Ambulance from './Pages/Ambulance';
+import User from './Pages/User';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Login /> */}
-      <Map/>
-    </div>
+    // <Ambulance/>
+    <User />
   );
 }
 
