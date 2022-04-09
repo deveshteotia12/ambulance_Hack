@@ -27,12 +27,6 @@ const Map = () => {
          })
       );
 
-      map.addControl(
-         new MapboxGeocoder({
-         accessToken: mapboxgl.accessToken,
-         mapboxgl: mapboxgl
-         })
-         );
 
       return () => map.remove()
    }, [])
