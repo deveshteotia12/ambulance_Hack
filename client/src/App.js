@@ -5,8 +5,8 @@ import User from './Pages/User';
 
 function App() {
   return (
-    // <Ambulance/>
-    <User/>
+    <Ambulance/>
+    // <User/>
   );
 }
 
