@@ -16,7 +16,7 @@ function App(props) {
   const [viewport, setViewport] = React.useState();
   const [currentFeature, setCurrentFeature] = React.useState([]);
   const [features, setFeatures] = React.useState([
-    { type: 'Feature', geometry: { type: 'Point', coordinates: [80.042304, 12.812956] } },
+    // { type: 'Feature', geometry: { type: 'Point', coordinates: [80.042304, 12.812956] } },
     // { type: 'Feature', geometry: { type: 'Point', coordinates: [80.042904, 12.817956] } },
   ]);
   const [Data, setData] = React.useState([]);
@@ -37,12 +37,17 @@ function App(props) {
       ]);
       console.log(features);
     });
-  }, [Data]);
+    if (props.user === 'user' && features.length > 0) {
+      window.prompt('There is an ambulance with critical patient near you');
+    }
+  }, [Data, props]);
 
   React.useEffect(() => {
     if (props.user === 'user') {
       props.ambulanceData.map(e => {
-        setFeatures([{ type: 'Feature', geometry: { type: 'Point', coordinates: e.Data.coordinates } }]);
+        setFeatures([
+          { type: 'Feature', geometry: { type: 'Point', coordinates: [e.Data.coordinates[1], e.Data.coordinates[0]] } },
+        ]);
       });
       setData(props.ambulanceData);
     }
