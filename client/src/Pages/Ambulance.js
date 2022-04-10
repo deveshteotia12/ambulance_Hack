@@ -6,7 +6,7 @@ import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 var socket;
 export default function Ambulance() {
-  const [latitude, setLatitude] = useState(12.812956);
+  const [latitude, setLatitude] = useState(12.817956);
   const [longitude, setLongitude] = useState(80.042304);
   const [roomID, setRoomID] = useState(null);
 
